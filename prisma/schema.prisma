@@ -12,3 +12,22 @@ model itemstable {
   description String
   price       String
 }
+
+model appointments {
+  id          Int       @id @default(autoincrement())
+  description String?
+  time        String?   @db.VarChar(255)
+  date        String?   @db.VarChar(255)
+  state       String?   @db.VarChar(255)
+  user_id     Int?
+  userdata    userdata? @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model userdata {
+  id           Int            @id @default(autoincrement())
+  name         String?        @db.VarChar(255)
+  email        String?        @db.VarChar(255)
+  authtoken    String?        @db.VarChar(255)
+  phonenumber  BigInt?
+  appointments appointments[]
+}

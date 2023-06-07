@@ -3,12 +3,10 @@ import React from "react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
-
 const Navbar = () => {
   return (
     <>
       <NavbarHeader></NavbarHeader>
-     
     </>
   );
 };
@@ -40,15 +38,18 @@ const NavbarHeader = () => {
       Toggle ? setToggle(false) : setToggle(true);
     }
   }
+ 
 
   return (
     <header className="bg-[#0400ff]">
       <nav className="flex justify-between items-center w-[92%] mx-auto">
         <div className="flex justify-between items-center">
+          <Link href="/">
           <img
             className="md:w-22 w-20 border-8 border-[#0400ff] rounded-2xl cursor-pointer"
-            src={"logo.png"}
+            src={"logo.png"} 
           ></img>
+          </Link>
           <h1 className="text-5xl pl-4 text-white">Kjaas</h1>
         </div>
 
@@ -117,12 +118,12 @@ function NavList() {
           </a>
         </li>
         <li>
-          <a
+          <Link
             className=" hover:text-2xl text-xl text-white ease-in-out duration-300"
             href="/Login"
           >
             Login/SignUp
-          </a>
+          </Link>
         </li>
       </ul>
     </>
