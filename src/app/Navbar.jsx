@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React from "react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -7,6 +7,7 @@ const Navbar = () => {
   return (
     <>
       <NavbarHeader></NavbarHeader>
+     
     </>
   );
 };
@@ -47,7 +48,7 @@ const NavbarHeader = () => {
           <Link href="/">
           <img
             className="md:w-22 w-20 border-8 border-[#0400ff] rounded-2xl cursor-pointer"
-            src={"logo.png"} 
+            src={"/logo.png"}
           ></img>
           </Link>
           <h1 className="text-5xl pl-4 text-white">Kjaas</h1>
@@ -58,7 +59,7 @@ const NavbarHeader = () => {
         </div>
         <div>
           <img
-            src={"menu.png"}
+            src={"/menu.png"}
             className={Show ? "" : "hidden"}
             onClick={handleClick}
             style={{ height: "40px", width: "40px" }}
@@ -120,9 +121,9 @@ function NavList() {
         <li>
           <Link
             className=" hover:text-2xl text-xl text-white ease-in-out duration-300"
-            href="/Login"
+            href="/Auth"
           >
-            Login/SignUp
+            DashBoard
           </Link>
         </li>
       </ul>

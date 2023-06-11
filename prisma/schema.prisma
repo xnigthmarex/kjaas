@@ -24,10 +24,11 @@ model appointments {
 }
 
 model userdata {
-  id           Int            @id @default(autoincrement())
+  id           Int            @default(autoincrement())  @unique
   name         String?        @db.VarChar(255)
-  email        String?        @db.VarChar(255)
-  authtoken    String?        @db.VarChar(255)
-  phonenumber  BigInt?
+  email        String        @db.VarChar(255) @unique
+  authtoken    String        @db.VarChar(255) @unique
+  phonenumber  String        @id @db.VarChar(255) @unique
+  password     String        @db.VarChar(255)
   appointments appointments[]
 }
