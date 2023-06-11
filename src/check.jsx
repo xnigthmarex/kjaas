@@ -1,6 +1,6 @@
 "use client";
 
-function Check() {
+function Check(params) {
   var cookies = document.cookie.split(";");
   if (document.cookie.indexOf(params.token[0].toString()) <= -1) {
     console.log("cookie not found");

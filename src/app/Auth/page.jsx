@@ -2,7 +2,7 @@
 import React from 'react'
 import Login from "./Login/page.jsx"
 import SignUp from "./SignUp/page.jsx"
-import LoginChooser from "./LoginChooser.jsx/page.jsx";
+import LoginChooser from "./LoginChooser/page.jsx";
 
 export default function page  () {
   function checkAuthToken() {

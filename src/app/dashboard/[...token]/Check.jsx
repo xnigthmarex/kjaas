@@ -1,6 +1,6 @@
 'use server';
 import {prisma} from "@/db"
-export default async function Check(auth) {
+export default async function test(auth) {
   let authtoken = auth[0].toString();
     const user = await prisma.userdata.findUnique({
         where: {
