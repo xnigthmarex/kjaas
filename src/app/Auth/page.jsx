@@ -16,7 +16,7 @@ export default function page  () {
         var authToken = cookie.substring("auth=".length);
         //window.location.href = "/dashboard/" + authToken;
         redirect("/dashboard/" + authToken);
-        break;
+        
       }
     }
     return false;

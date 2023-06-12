@@ -97,7 +97,7 @@ function NavList() {
         <li>
           <a
             className="hover:text-2xl text-xl text-white ease-in-out duration-300"
-            href="#"
+            href="/NewAppointment"
           >
             Book Appointment
           </a>
