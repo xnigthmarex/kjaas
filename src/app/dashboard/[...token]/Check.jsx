@@ -8,6 +8,7 @@ export default async function test(auth) {
         },
     })
     if (user != null) {
+       
         return user;
     }
     else {

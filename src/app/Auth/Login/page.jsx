@@ -1,9 +1,11 @@
 "use client";
 import React from "react";
 import axios from "axios";
-
+import { redirect } from "next/navigation";
 export default function Login() {
+
   const handleSubmit = async (e) => {
+    
     // Set the expiration time for the session cookie
     function setSessionCookie(cookieName, cookieValue, expirationTime) {
       var date = new Date();
@@ -36,13 +38,14 @@ export default function Login() {
         return;
       } else {
         setSessionCookie("auth",data, 3600);
-        window.location.href="/dashboard/"+ data;
-        
+        window.location.href = "/dashboard/" + data;
       }
+      
     } catch (error) {
       console.log(error);
       window.alert("Error logging in please try again later");
     }
+    
   };
 
   return (

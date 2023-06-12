@@ -1,21 +1,27 @@
-'use client';
+"use client";
 
-import React from 'react'
-import test from '@/app/dashboard/[...token]/Check.jsx'
-import Check from '@/check.jsx'
-function dashboard({params}) {
-  //function checking if there is a session auth token present in browser 
+import React from "react";
+import test from "@/app/dashboard/[...token]/Check.jsx";
+import Check from "@/check.jsx";
+import { useState, useEffect } from "react";
+function dashboard({ params }) {
   Check(params);
-  console.log(test(params.token));
-  
+  const [useData, setUseData] = useState(["Hello"]);
+  useEffect(() => {
+    //call the test function and then set the state on useData to the data returned by the function
+    test(params.token).then((data) => {
+      setUseData(data);
+    });
+  }, []);
+
   return (
     <>
-    
-    <h1>{params.token}</h1>
+      <h1>Hello</h1>
+      <h1>{useData.name}</h1>
+      <h1>{useData.email}</h1>
+      <h1>{params.token}</h1>
     </>
-  )
+  );
 }
 
-export default dashboard
-
-
+export default dashboard;
